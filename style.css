@@ -1,0 +1,147 @@
+body {margin:0;
+  
+}
+
+.container-1{
+  background-image:url(https://i.pinimg.com/originals/e4/95/f0/e495f0eb699e9c5a4eed10e37f94df02.jpg);
+    background-size: 100% 555px ;
+    margin:50px 10px;
+    min-height: 510px;
+    margin-top:50px;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000000;
+    padding: 50px 0px;
+    margin-left: 30px;
+    margin-right: 30px ;
+}
+
+.typewriter h1 {
+    color: white;
+    font-family:'Acme', sans-serif;
+
+    font-size: 40px;
+    font-weight: bold;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 5.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+      padding: 180px 0px;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  
+ .typewriter span{
+    animation: blink 1s infinite;
+  }
+  @keyframes blink{
+    to{opacity: .0;}
+  }
+  
+.navbar {
+  overflow: hidden;
+  background:white;
+  box-shadow: 5px 3px 5px #d3d3d3; 
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family:ebrima;
+
+}
+
+input{
+    border-radius: 10px;
+    float:right;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.navbar i{
+    float: right;
+    padding:12px 12px;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left:0px;
+}
+
+.navbar i:hover{
+    cursor: pointer;
+  color: #808080;
+}
+
+.navbar a:hover {
+  color: #808080;
+  cursor: pointer;
+}
+
+.link{
+    position: relative;
+  }
+  
+  .link:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 3px;
+    display: block;
+    border-radius: 2px;
+    margin-top: 5px;
+    right: 0;
+    background: rgb(228, 153, 19);
+    transition: width .1s ease;
+    -webkit-transition: width .1s ease;
+  }
+   
+  .link:hover:after{
+    width: 100%;
+    left: 0;
+    background: rgb(228, 153, 19);
+  }
+  
+.footer i{
+    margin: 10px;
+}
+
+.footer i:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.line{
+    width: 100%;
+    height: 47px;
+    border-bottom: 1px solid black;
+    position: absolute;
+}
+
+
+.col-3 img:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+

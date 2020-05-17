@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="view.css">    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+        
+
+    
+        <div class="navbar">
+           <img  style="height: 50px;float: left;margin-left: 0px;" src="https://www.kindpng.com/picc/m/54-545593_eco-friendly-image-environment-vector-hd-png-download.png">
+            <a  class="link" href="index.html"><strong>Home</strong></a>
+            <a  class="link" href="about.html"><strong>About</strong></a>
+            <a  class="link" href="#contact"><strong>Contact</strong></a> 
+            <i  class="fa fa-user" aria-hidden="true" style="font-size: 20px;"></i>
+            
+            <a href="cart.html"><i  class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 20px; margin: 0;" ></i></a> 
+            
+            <input list="linked-list" onkeypress="search()" style="border-radius:10px;width:15%;display: none;" type="Search" class="form-control"  id="searchBar" placeholder="Search..." name="Search">
+           
+            <datalist id="linked-list">
+             <select>
+                <option value="Jute Bags">Jute Bags</option>
+                <option value="Seed Pencil">Seed Pencil</option>
+                <option value="Utensils">Utensils</option>
+             </select>
+            </datalist>
+            <i id='toggle-search' class="fa fa-search" aria-hidden="true" ></i>
+        </div>
+       
+    <div class="products-container" style="margin-top: 10%;">
+      <div class="product-header">
+         <h5 class="product-tittle">PRODUCT</h5>
+         <h5 class="Price">PRICE</h5>
+         <h5 class="Quantity">QUANTITY</h5>
+         <h5 class="Total">TOTAL</h5>
+      </div>
+      <div class="products">
+
+      </div>
+    </div>
+   
+<script >
+    function displayCart(){
+      let cartItems=localStorage.getItem("productsincart");
+      cartItems=JSON.parse(cartItems);
+      console.log(cartItems);
+      
+      let productContainer=document.querySelector(".products");
+      console.log(cartItems);
+
+      
+      if(cartItems && productContainer){
+          productContainer.innerHTML='',
+          Object.values(cartItems).map(item=>{
+              productContainer.innerHTML +=`
+              <div class="product">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                <img style="height:180px;width:170px" src="./images/${item.tag}.jpg">
+                <span style="display:inline-block;">${item.name}</span>
+              </div>
+              <div style="display:inline-block;" class="price">${item.price}</div>
+              <div class="quantity">
+                <i class="fa fa-chevron-circle-left" id="decrease" aria-hidden="true"></i>
+                <span>${item.inCart}</span>
+                <i class="fa fa-chevron-circle-right" id="increase" aria-hidden="true"></i>
+              </div> 
+              <div class=total>
+              ${item.inCart*item.price}
+              </div>
+              
+              `
+          });
+            
+           productContainer.innerHTML +=`
+             <div class="basketTotalConatainer"></div>
+               <h4 class="BasketTotalTitlte">Basket Total</h4>
+               <h4 class="basketTotal">
+                <i class="fa fa-inr" aria-hidden="true">${cartCost}</i>
+               </h4>
+             
+               `;     
+          }
+
+    }
+
+displayCart();
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+
+
+.card{
+    background: #ffffff;
+    border-radius: 5px;
+    margin: 20px;
+    transition: transform .4s;
+}
+
+.card:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+    -webkit-box-shadow: 0 0 10px #d3d3d3;
+        box-shadow: 0 0 10px #d3d3d3; 
+}
+
+.navbar {
+    overflow: hidden;
+    background:white;
+    box-shadow: 10px 5px 5px #d3d3d3; 
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family:ebrima;
+  
+  }
+  
+  input{
+      border-radius: 10px;
+      float:right;
+  }
+  
+  input::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  
+  .navbar i{
+      float: right;
+      padding:12px 12px;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left:0px;
+  }
+  
+  .navbar i:hover{
+      cursor: pointer;
+    color: #808080;
+  }
+  
+  .navbar a:hover {
+    color: #808080;
+    cursor: pointer;
+  }
+  
+  .link{
+      position: relative;
+    }
+    
+    .link:after{
+      content: '';
+      position: absolute;
+      width: 0; height: 3px;
+      display: block;
+      border-radius: 2px;
+      margin-top: 5px;
+      right: 0;
+      background: rgb(228, 153, 19);
+      transition: width .1s ease;
+      -webkit-transition: width .1s ease;
+    }
+     
+    .link:hover:after{
+      width: 100%;
+      left: 0;
+      background: rgb(228, 153, 19);
+    }
+
+    .btn-success{
+        background: rgb(1, 116, 1) !important; 
+        
+    }   
+
+    .btn-success:hover {
+        background: rgb(0, 70, 0) !important; 
+    }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        min-height: 50px;
+        width: 100%;
+        background-color:rgb(207, 128, 49);
+        color: white;
+        text-align: center;
+        display: none;
+        -webkit-box-shadow:inset 0 0 10px rgb(146, 75, 5);
+        box-shadow:inset 0 0 10px rgb(146, 75, 5); 
+     }
